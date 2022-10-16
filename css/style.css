@@ -51,21 +51,20 @@ footer {
     background: #1585b5 !important;
 }
 
-p.footer-text {
+footer p {
     text-transform: uppercase;
     text-align: center;
     margin: 0;
     color: white;
     font-weight: 300;
-    padding-top: 10px;
-    padding-bottom: 10px;
+		padding: 10px 20px;
     line-height: 24px;
     /* font-size: 18px; */
 }
 
-a.footer-text-a {
-    text-decoration: none;
+footer p a {
     color: white;
+		font-weight: bold;
 }
 
 a#scroll span {
@@ -478,9 +477,9 @@ div.l4-wrap-cen {
     width: 40%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 35px;
+		padding-top: 35px;
     display: block;
-    padding-bottom: 55px;
+		padding-bottom: 55px;
 }
 
 div.l4-text-top{
@@ -684,7 +683,7 @@ h2.build {
     
     div.l4-wrap-cen {
         width: 85% !important;
-    }s
+    }
 }
 
 @media only screen and (max-height : 470px) and (max-width : 1250px) {
