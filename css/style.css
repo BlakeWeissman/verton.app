@@ -59,7 +59,6 @@ footer p {
     font-weight: 300;
 		padding: 10px 20px;
     line-height: 24px;
-    /* font-size: 18px; */
 }
 
 footer p a {
@@ -139,7 +138,6 @@ a.logo {
     text-transform: uppercase;
     font-weight: 900;
     font-size: 33px;
-    /*text-shadow: 0px 2px 5px rgba(150, 150, 150, 0.5);*/
     float: left;
     display: block;
     text-align: center;
@@ -190,10 +188,6 @@ a.nav-link-hov-ch:hover {
     border-width: 1px !important;
 }
 
-a.logo:hover {
-    
-}
-
 .main {
     margin-top: 30px; 
 }
@@ -210,14 +204,12 @@ a.navbar-text-change {
 /*L1*/
 div.l1 {
     height: 100vh;
-    /*background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(head.jpeg);*/
     background: white;
     background-size: cover !important;
     min-height: fit-content;
     display: flex;
     background-attachment: fixed !important;
     background-size: cover !important;
-    /*box-shadow: 0 25px 60px rgba(0,0,0,.2);*/
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -411,14 +403,12 @@ div.l2-img-cont {
 
 /*L3*/
 div.l3 {
-    /*background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(head.jpeg);*/
     background: white;
     background-size: cover !important;
     min-height: fit-content;
     display: flex;
     background-attachment: fixed !important;
     background-size: cover !important;
-    /*box-shadow: 0 25px 60px rgba(0,0,0,.2);*/
     width: 40%;
     margin-left: auto;
     margin-right: auto;
@@ -459,14 +449,12 @@ p.l3 {
 
 /*L4*/
 div.l4 {
-    /*background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(head.jpeg);*/
     background: white;
     background-size: cover !important;
     min-height: fit-content;
     display: flex;
     background-attachment: fixed !important;
     background-size: cover !important;
-    /*box-shadow: 0 25px 60px rgba(0,0,0,.2);*/
     width: 100%;
     margin-left: auto;
     margin-right: auto;
