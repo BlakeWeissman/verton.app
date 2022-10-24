@@ -16,23 +16,3 @@ $(document).ready(function() {
     $('ul li').click(function(e) {
     });
 });
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
-    if (scroll >= 50) {
-        $(".navbar").addClass("navbar-change");
-        $(".logo").addClass("navbar-text-change");
-        $(".nav-link").addClass("navbar-text-change");
-        $("ul.color-bg").addClass("head-change-color");
-        $("nav.nav-links").removeClass("mobile-start");
-        $(".nav-button").addClass("nav-button-change");
-        $(".nav-link").removeClass("nav-link-hov-ch");
-    } else {
-        $(".navbar").removeClass("navbar-change");
-        $("ul.color-bg").removeClass("head-change-color");
-        $("nav.nav-links").addClass("mobile-start");
-        $(".logo").removeClass("navbar-text-change");
-        $(".nav-link").removeClass("navbar-text-change");
-        $(".nav-button").removeClass("nav-button-change");
-        $(".nav-link").addClass("nav-link-hov-ch");
-    }
-});
