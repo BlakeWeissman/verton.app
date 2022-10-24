@@ -609,6 +609,7 @@ ul {
 
 	a.nav-link {
 		width: 100%;
+		margin: 0;
 		margin-bottom: 12px;
 	}
 
