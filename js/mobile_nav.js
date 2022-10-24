@@ -1,44 +1,35 @@
+const menuBreakpoint = 1087;
+
+function closeMenu() {
+	$("ul").hide();
+	$("#menu-icon").show();
+	$("#menu-icon-close").hide();
+}
+
+function openMenu() {
+	$("ul").show();
+	$("#menu-icon").hide();
+	$("#menu-icon-close").show();
+}
+
+function hideMenu() {
+	$("#menu-icon").hide();
+	$("#menu-icon-close").hide();
+	$("ul").show();
+}
+
+function handleMenuLogic() {
+	if ($(window).width() <= menuBreakpoint) {
+		closeMenu();
+		$("#menu-icon").click(openMenu);
+		$("#menu-icon-close").click(closeMenu);
+	}
+	if ($(window).width() >= menuBreakpoint) {
+		hideMenu();
+	}
+}
+
 $(document).ready(function () {
-	if ($(window).width() >= 1086) {
-		$("#menu-icon").hide();
-		$("#menu-icon-close").hide();
-		$("ul").show();
-	}
-	if ($(window).width() <= 1086) {
-		$("#menu-icon").show();
-		$("ul").hide();
-		$("#menu-icon-close").hide();
-		$("#menu-icon").click(function () {
-			$("ul").show();
-			$("#menu-icon").hide();
-			$("#menu-icon-close").show();
-		});
-		$("#menu-icon-close").click(function () {
-			$("ul").hide();
-			$("#menu-icon").show();
-			$("#menu-icon-close").hide();
-		});
-	}
-	$(window).resize(function () {
-		if ($(window).width() <= 1086) {
-			$("#menu-icon").show();
-			$("ul").hide();
-			$("#menu-icon-close").hide();
-			$("#menu-icon").click(function () {
-				$("ul").show();
-				$("#menu-icon").hide();
-				$("#menu-icon-close").show();
-			});
-			$("#menu-icon-close").click(function () {
-				$("ul").hide();
-				$("#menu-icon").show();
-				$("#menu-icon-close").hide();
-			});
-		}
-		if ($(window).width() >= 1086) {
-			$("#menu-icon").hide();
-			$("#menu-icon-close").hide();
-			$("ul").show();
-		}
-	});
+	handleMenuLogic();
+	$(window).resize(handleMenuLogic);
 });
