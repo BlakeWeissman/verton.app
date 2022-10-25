@@ -271,7 +271,7 @@ a.l1 {
 
 a.l1:hover {
 	background: white;
-	color: #1585b5;
+	color: #1585b5 !important;
 	outline: none !important;
 	border-color: #1585b5 !important;
 	border-style: solid !important;
@@ -555,6 +555,19 @@ h2.build {
 	text-transform: uppercase;
 	font-size: 17px;
 	font-weight: 800;
+}
+
+div#builds * {
+	color: white;
+}
+
+div#builds > div:not(:first-child) {
+	margin-top: 15px; 
+	margin-bottom: 15px; display: flex;
+}
+
+div#builds > div:not(:first-child) > div:last-child {
+	margin-left: auto; text-align: right;
 }
 
 div.navbar {
