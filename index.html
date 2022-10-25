@@ -18,7 +18,7 @@
 				</div>
 				<div class="navbar-right">
 					<a id="menu-icon" class="nav-head mobile-btn ham-btn" style="font-size: 26px; float: right; padding-top: 8px;">
-						<i class="icon-menu nav-head icon-open" aria-hidden="true"></i>
+						<i id="menu-icon-glyph" class="icon-menu nav-head icon-open" aria-hidden="true"></i>
 					</a>
 					<a id="menu-icon-close" class="nav-head mobile-btn ham-btn"
 						style="display: none; font-size: 25px; float: right; margin-top: 9px;">
@@ -183,41 +183,52 @@
 
 			const menuBreakpoint = 1087;
 
+			var menuIsOpen = true;
+
+			var menuIsHidden = false;
+
 			function closeMenu() {
-				$("ul").hide();
-				$("#menu-icon").show();
-				$("#menu-icon-close").hide();
+				if (menuIsOpen) {
+					$("ul").hide();
+					$("#menu-icon").show();
+					$("#menu-icon-close").hide();
+					menuIsOpen = false;
+				}
 			}
 
 			function openMenu() {
-				$("ul").show();
-				$("#menu-icon").hide();
-				$("#menu-icon-close").show();
-			}
-
-			function hideMenu() {
-				$("#menu-icon").hide();
-				$("#menu-icon-close").hide();
-				$("ul").show();
+				if (!menuIsOpen) {
+					$("ul").show();
+					$("#menu-icon").hide();
+					$("#menu-icon-close").show();
+					menuIsOpen = true;
+				}
 			}
 
 			function handleMenuLogic() {
-				if ($(window).width() <= menuBreakpoint) {
+				if ((menuIsHidden || menuIsOpen) && $(window).width() <= menuBreakpoint) {
+					menuIsOpen = true;
 					closeMenu();
 					$("#menu-icon").click(openMenu);
-					$("#menu-icon-close").click(closeMenu);
+					menuIsHidden = false;
 				}
-				if ($(window).width() >= menuBreakpoint) {
-					hideMenu();
+				if (!menuIsHidden && $(window).width() >= menuBreakpoint) {
+					if (!menuIsHidden) {
+						$("#menu-icon").hide();
+						$("#menu-icon-close").hide();
+						$("ul").show();
+						menuIsOpen = false;
+						menuIsHidden = true;
+					}
 				}
 			}
 
-			$(document).ready(function () {
+			$(document).ready(function() {
 				handleMenuLogic();
 				$(window).resize(handleMenuLogic);
 
 				// Smooth scroll
-				$("a").on("click", function (event) {
+				$("a").on("click", function(event) {
 					if (this.hash !== "") {
 						event.preventDefault();
 						var hash = this.hash;
@@ -228,6 +239,13 @@
 						});
 					}
 				});
+			});
+
+			$("body").click(function(event) {
+      	if (event.target.id === "menu-icon-glyph") {
+          return;
+				}
+				closeMenu();
 			});
 		</script>
 	</body>
